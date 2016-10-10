@@ -127,4 +127,4 @@ r1 == r2
 setkey(dt, subject, activity, featDomain, featAcceleration, featInstrument, featJerk, featMagnitude, featVariable, featAxis)
 dtTidy <- dt[, list(count = .N, average = mean(value)), by = key(dt)]
 
-summary(dtTidy)
+write.table(dtTidy, file = "DatasetHumanActivityRecognitionUsingSmartphones.csv", sep = "\t", row.name=FALSE)
